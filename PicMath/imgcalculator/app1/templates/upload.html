@@ -1,12 +1,10 @@
 {%load staticfiles%}
 
-
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
-	<title>PicMath</title>
+	<title>Upload image</title>
 	<!-- Meta Tags -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -24,7 +22,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- // Meta Tags -->
 	<link href="static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="static/css/font-awesome.min.css" rel="stylesheet" type="text/css" media="all">
-	<link rel="stylesheet" href="static/css/flexslider.css" type="text/css" media="screen" property="" />
 	<!--testimonial flexslider-->
 	<link href="static/css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<!--fonts-->
@@ -42,7 +39,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						
 							<div class="col-md-9 top-left">
 								<ul>
-									<li><i class="fa fa-book" aria-hidden="true"></i> An image calculator</li>
+									<li><i class="fa fa-book" aria-hidden="true"></i>An image calculator</li>
 									
 								</ul>
 							</div>
@@ -76,12 +73,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
 						<ul class="nav navbar-nav navbar-right">
-							<li><a href="/" class="active">Home</a></a></li>
+							<li><a href="/index">Home</a></li>
 							<li><a href="/mainpage">Main</a></li>
-							
 						</ul>
 
 					</div>
+
 					
 
 
@@ -90,54 +87,75 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 
 		</div>
+		<!--//top-bar-w3layouts-->
+		<!--Slider-->
+		<div class="banner">
+			
+		</div>
 		
-	<div class="w3-agile-services">
-		<div class="container">
-			<h3 class="title-txt"><span>S</span>ervices</h3>
-		<div class="agileits-services">
-				<div class="services-right-grids">
-					<div class="col-sm-4 services-right-grid">
-						<div class="se-top">
-							<div class="services-icon">
-								<i class="fa fa-book" aria-hidden="true"></i>
-							</div>
-							<div class="services-icon-info">
-								<h5>UPLOAD IMAGE </h5>
-								<p><a href="/upload">upload</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 services-right-grid">
-						<div class="se-top">
-							<div class="services-icon">
-							<i class="fa fa-eye" aria-hidden="true"></i>
-							</div>
-							<div class="services-icon-info">
-								<h5>PERFORM OPERATIONS</h5>
-								<p><a href="">Calculate</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-sm-4 services-right-grid">
-						<div class="se-top">
-							<div class="services-icon">
-							<i class="fa fa-flask" aria-hidden="true"></i>
-							</div>
-							<div class="services-icon-info">
-								<h5>CAPTURE IMAGE</h5>
-								<p><a href="">Take photo</a></p>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				
+		<!-- //Modal1 -->
+		<!--//Slider-->
+	</div>
+	<!--//Header-->
+	<div class="about-1">
+	<div class="container">
+	<h3 class="title-txt"><span>Upload </span>image</h3>
+		<div class="ab-agile">
+			<div class="col-md-6 aboutleft1">
+                <form method="POST" enctype="multipart/form-data">
+						{% csrf_token %}
+                    <table class="table table-responsive table-bordered" align="center">
+                        <tr>
+                            <td colspan="2"><center><b>UPLOAD IMAGE HERE</b></center></td>
+                        </tr>                        
+						<tr>
+							<td>Photo</td>
+							<td><input type="file" name="up" class="form-control"/></td>
+						</tr>
+						<tr>
+                            <td colspan="2">
+                                <center>
+                                    <input type="submit" name="sub" value="UPLOAD" class="btn btn-success btn-sm" />
+                   <br /> {{error}}
+                                
+                                </center>
+                            </td>
+                        </tr>
+							
+                        
+                    </table>
+                </form>
 			</div>
+			<div class="col-md-6 aboutright1">
+				
+
+				
+				<table class="table table-bordered table-responsive">
+					<tr>
+						<td colspan="4"><center><b>UPLOADED IMAGE</b></center></td>
+					</tr>
+					<tr>
+						<td><img src="/static/userpic/add.png"></td>
+					</tr>
+					
+					
+				</table>
+				
+			
+			</div>
+			
+			<div class="clearfix"></div>
 		</div>
 	</div>
+</div>
+	<!--about-->
 	
+	<!--//about-->
+	<!-- team -->
+	
+
 <!-- footer -->
-	<div class="footer">
+<div class="footer">
 	<div class="container">
 		<div class="f-bg-w3l">
 		<div class="col-md-4 w3layouts_footer_grid">
@@ -160,7 +178,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-4 w3layouts_footer_grid">
 					<h2>Subscribe</h2>
 					<p>By subscribing to our mailing list you will always get latest news from us.</p>
-					<form action="#" method="post">
+					<form action="#" method="GET">
 						<input type="email" name="Email" placeholder="Enter your email..." required="">
 						<button class="btn1"><i class="fa fa-envelope-o" aria-hidden="true"></i></button>
 						<div class="clearfix"> </div>
