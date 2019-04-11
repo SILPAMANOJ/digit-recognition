@@ -17,7 +17,7 @@ with open(fname, 'r') as f:
                     c+=1
                     continue
             else:
-                if (ch>=42) and (ch<=47):
+                if (ch>=37) and (ch<=94):
                     oppr=i
 
 
@@ -25,15 +25,36 @@ o1=int(opp1)
 o2=int(opp2)
 if oppr=='+':
     sum=o1+o2
+    print(opp1,"+",opp2,"=",sum)
+elif oppr=='**':
+    sum=o1**o2
+    print(opp1,"^",opp2,"= ",sum)
 elif oppr=='-':
     sum=o1-o2
+    print(opp1,"-",opp2,"=",sum)
 elif oppr=='*':
     sum=o1*o2
+    print(opp1,"*",opp2,"=",sum)
 elif oppr=='/':
     sum=o1/o2
+    print(opp1,"/",opp2,"=",sum)
+elif oppr=='%':
+    sum=o1%o2
+    print(opp1,"%",opp2,"=",sum)
+elif oppr=='<':
+    if o1<o2:
+        print(opp1,"<",opp2,"is true")
+    else:
+        print(opp1,"<",opp2," is false")
+elif oppr=='>':
+    if o1>o2:
+        print(opp1,">",opp2,"is true")
+    else:
+        print(opp1,">",opp2," is false")
+
 else:
     sum=0
-print(opp1 "+" opp2 "=", sum)
+
 #print(sum)
                     
 #print(oppr)
